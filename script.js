@@ -1,8 +1,8 @@
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 // Native HTML validation and POST allow submission even without JavaScript.
-// Netlify detects the form in index.html during deployment.
-const form = document.querySelector('form[data-netlify]');
+// Netlify detects the form in index.html during deployment and strips data-netlify, so select by name.
+const form = document.querySelector('form[name="founding-performance-partners"]');
 if (form) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
